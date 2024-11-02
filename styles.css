@@ -1,0 +1,113 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  body, html {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    overflow: hidden;
+  }
+  
+  body {
+    background-image: url(https://i.pinimg.com/originals/88/1a/47/881a47f66d76287704a2be1640b27086.gif); /* Replace with your image URL */
+    background-size: cover; 
+    background-repeat: repeat; 
+    background-position: center; 
+    filter: brightness(1.5);
+    height: 100vh;
+    width: 200vh;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    color: white; 
+}
+
+
+  
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  /* Dark overlay */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  /* Main Content */
+  .content {
+    position: relative;
+    text-align: center;
+    z-index: 1;
+  }
+  
+  h1 {
+    color: #fff;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  
+  #city-search {
+    padding: 12px;
+    font-size: 1rem;
+    width: 80%;
+    max-width: 400px;
+    border: 2px solid #fff;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    text-align: center;
+    backdrop-filter: blur(10px);
+  }
+  
+  #city-search::placeholder {
+    color: #ddd;
+  }
+  
+  #city-search:focus {
+    outline: none;
+    border-color: #00d2ff;
+    background: rgba(255, 255, 255, 0.3);
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  
+  /* Result Styles */
+  #results {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 800px;
+    margin-top: 20px;
+    color: #fff;
+  }
+  
+  .section {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 8px;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .section img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }  
+  
+

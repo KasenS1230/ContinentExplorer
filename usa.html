@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>USA - Explore the Landmarks</title>
+    <style>
+        /* Base styling */
+        body {
+            background-color: rgba(7, 51, 22, 0.8);
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        /* Navigation styles */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .button {
+            font-size: 18px;
+            text-decoration: none;
+            color: #333;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .button img {
+            width: 36px;
+            height: 36px;
+        }
+
+        .currency-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000; /* Ensure it stays above other elements */
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .currency-button:hover {
+            background-color: #0056b3;
+        }
+
+
+        /* Content and box styling */
+        .content {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .category-box {
+            background: rgba(117, 128, 134, 0.8);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #000;
+        }
+        h2 {
+            color: #fff;
+            text-align: center;
+        }
+
+        /* List item styling */
+        .list-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .list-item:hover {
+            transform: scale(1.05);
+            max-height: 450px;
+        }
+
+        .list-item img {
+            width: 60px; /* Smaller image size */
+            height: 60px;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        .list-item strong {
+            font-size: 18px;
+            color: #333;
+        }
+
+        .list-item p {
+            margin: 5px 0 0;
+            font-size: 15px;
+            color: #666;
+        }
+
+        /* Overlay styles */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            overflow: hidden; /* Prevent scrolling */
+        }
+
+        .overlay-content {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 90%;
+            max-height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-y: auto; /* Allow scrolling for the content if it overflows */
+        }
+
+        .overlay img {
+            max-width: 50%; /* 50% of the overlay's width */
+            max-height: 400px; /* Fixed height */
+            border-radius: 8px;
+            margin-bottom: 15px; /* Space between the image and text */
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 24px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Scroll to top button styling */
+        .scroll-to-top {
+            position: fixed;
+            bottom: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fff;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: bottom 0.5s ease, opacity 0.3s;
+        }
+
+        .scroll-to-top.show {
+            bottom: 30px;
+            opacity: 1;
+        }
+
+        .scroll-to-top img {
+            width: 36px;
+            height: 36px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Buttons -->
+    <div class="nav-container">
+        <a href="page1.html" class="button">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s" alt="Previous Page" />
+        </a>
+        <a href="index.html" class="button">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg" alt="Home" />
+        </a>
+    </div>
+
+    <button class="currency-button" onclick="window.location.href='currency.html'">Currency Exchanger</button>
+    
+    <!-- Main Content -->
+    <div class="content">
+        <h1>Explore USA</h1>
+
+        <!-- Landmarks Section -->
+        <div class="category-box">
+            <h2>Landmarks</h2>
+            <ul>
+                <li class="list-item" onclick="showOverlay('https://www.statueofliberty.org/wp-content/uploads/2020/07/Statue-of-liberty.jpg', 'The Statue of Liberty, a gift from France, has symbolized freedom and democracy since 1886. Located on Liberty Island in New York Harbor, visitors can take a ferry to the island, explore the museum, and even ascend to the crown for stunning views of New York City’s skyline. The nearby Ellis Island offers an in-depth look at America’s immigrant history.Flights to New York City average $200–$400 from within the U.S., $400–$800 from Europe, and around $600–$1,200 from Asia')">
+                    <img src="https://www.statueofliberty.org/wp-content/uploads/2020/07/Statue-of-liberty.jpg" alt="CN Tower">
+                    <div>
+                        <strong>Statue of Liberty</strong> - New York, New York
+                        <p>A gift from France symbolizing freedom, the Statue of Liberty stands in New York Harbor as a beacon of democracy. Visitors can tour the pedestal, museum, and even climb to the crown.</p>
+                    </div>
+                </li>
+                <li class="list-item" onclick="showOverlay('https://www.globalnationalparks.com/wp-content/uploads/national-park-grand-canyon.jpg', 'The Grand Canyon is one of the world’s most famous natural wonders, created by millions of years of erosion by the Colorado River. Visitors can explore the South Rim, which is open year-round, or the more remote North Rim, accessible in summer. The park offers countless trails, scenic viewpoints, and guided tours, making it ideal for outdoor enthusiasts.To reach the Grand Canyon, most visitors fly into Phoenix or Las Vegas, with flights averaging $200–$500 within the U.S. and $500–$900 from international destinations.')">
+                    <img src="https://www.globalnationalparks.com/wp-content/uploads/national-park-grand-canyon.jpg" alt="Banff National Park">
+                    <div>
+                        <strong>Grand Canyon</strong> - Arizona
+                        <p>Carved by the Colorado River, the Grand Canyon is a vast, awe-inspiring landscape showcasing millions of years of geological history, with stunning views from its rim and numerous hiking trails.</p>
+                    </div>
+                </li>
+                <li class="list-item" onclick="showOverlay('https://assets.editorial.aetnd.com/uploads/2015/02/topic-golden-gate-bridge-gettyimages-177770941.jpg?width=1920&height=960&crop=1920%3A960%2Csmart&quality=75&auto=webp', 'The Golden Gate Bridge, an iconic symbol of San Francisco, connects the city to Marin County and spans 1.7 miles across the San Francisco Bay. Visitors can walk or bike across the bridge, taking in the impressive views of the Pacific Ocean and the bay, especially when the bridge is partially obscured by fog, creating a magical effect. Domestic flights to San Francisco average $200–$400, while international flights are around $500–$1,200 depending on the season.')">
+                    <img src="https://assets.editorial.aetnd.com/uploads/2015/02/topic-golden-gate-bridge-gettyimages-177770941.jpg?width=1920&height=960&crop=1920%3A960%2Csmart&quality=75&auto=webp" alt="Niagara Falls">
+                    <div>
+                        <strong>Golden Gate Bridge</strong> - San Francisco, California
+                        <p>This iconic orange-red suspension bridge links San Francisco to Marin County, offering breathtaking views of SFO bay and Pacific Ocean, often enveloped in mist.</p>
+                    </div>
+                </li>
+                <li class="list-item" onclick="showOverlay('https://www.travelandleisure.com/thmb/OuQ-FAg3QZH5uTzivMy86NEFI-Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mount-rushmore-south-dakota-RUSHMORE0317-10c603a0e75e44a9a04ee36457095990.jpg', 'Mount Rushmore features the carved faces of four U.S. presidents—George Washington, Thomas Jefferson, Theodore Roosevelt, and Abraham Lincoln—honoring their contributions to American history. Located in the scenic Black Hills, visitors can take guided tours, attend ranger talks, and explore the nearby Presidential Trail.The closest major airport is Rapid City, South Dakota, with flights averaging $250–$450 from within the U.S. International travelers may need connecting flights, with costs around $600–$1,000.')">
+                    <img src="https://www.travelandleisure.com/thmb/OuQ-FAg3QZH5uTzivMy86NEFI-Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mount-rushmore-south-dakota-RUSHMORE0317-10c603a0e75e44a9a04ee36457095990.jpg" alt="Old Quebec City">
+                    <div>
+                        <strong>Mount Rushmore</strong> - South Dakota
+                        <p>Featuring the carved faces of four U.S. presidents, Mount Rushmore celebrates American heritage against the scenic backdrop of South Dakota’s Black Hills.</p>
+                    </div>
+                </li>
+                <li class="list-item" onclick="showOverlay('https://wallup.net/wp-content/uploads/2019/09/481852-walt-disney-world-resort-disney-orlando-floride-florida-usa-universal-studio-castel-hotel-mickey-night-light-stores-entertainment-parc-childrens-offices-storehouses-towers-buildings-cities-1.jpg','Known as The Most Magical Place on Earth, Walt Disney World features four theme parks—Magic Kingdom, Epcot, Disneys Hollywood Studios, and Disneys Animal Kingdom—as well as two water parks, numerous resorts, and entertainment districts. Perfect for families and fans, Disney World offers a variety of experiences, from thrilling rides to immersive storytelling.Flights to Orlando average $150–$400 from within the U.S., while international flights vary from $500–$1,200 depending on the season and country.')">
+                    <img src="https://wallup.net/wp-content/uploads/2019/09/481852-walt-disney-world-resort-disney-orlando-floride-florida-usa-universal-studio-castel-hotel-mickey-night-light-stores-entertainment-parc-childrens-offices-storehouses-towers-buildings-cities-1.jpg" alt="Old Quebec City">
+                    <div>
+                        <strong>Walt Disney World</strong> - Orlando, Florida
+                        <p>Walt Disney World offers four theme parks and countless attractions, making it a dream destination for families and fans worldwide.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay">
+        <div class="overlay-content">
+            <span class="close-btn" onclick="closeOverlay()">&times;</span>
+            <img id="overlay-image" src="" alt="">
+            <p id="overlay-text"></p>
+        </div>
+    </div>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTopBtn" onclick="scrollToTop()">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828910.png" alt="Scroll to Top">
+    </button>
+
+    <script>
+        // Function to show overlay
+        function showOverlay(imageSrc, text) {
+            document.getElementById("overlay-image").src = imageSrc;
+            document.getElementById("overlay-text").innerText = text;
+            document.getElementById("overlay").style.display = "flex";
+        }
+
+        // Function to close overlay
+        function closeOverlay() {
+            document.getElementById("overlay").style.display = "none";
+        }
+
+        // Scroll to Top Functionality
+        window.onscroll = function() {
+            let scrollToTopBtn = document.getElementById("scrollToTopBtn");
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                scrollToTopBtn.classList.add('show');
+            } else {
+                scrollToTopBtn.classList.remove('show');
+            }
+        };
+
+        function scrollToTop() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE, and Opera
+        }
+    </script>
+</body>
+</html>

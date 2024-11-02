@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore North America</title>
+    <style>
+        .home-link {
+            position: absolute;
+            top: 1000px;
+            left: 1000px;
+            font-size: 18px;
+            text-decoration: none;
+            color: #333;
+            background-color: #ffffff;
+            padding: 5px 10px;
+            border-radius: 5px;
+        }
+
+        .na-container a {
+            display: block;
+            text-align: center;
+            margin: 20px;
+            padding: 20px;
+            font-size: 24px;
+            color: #333;
+            text-decoration: none;
+            border: 2px solid black; /* Initial transparent border */
+            border-radius: 10px;
+            transition: border-color 0.3s ease; /* Smooth transition */
+        }
+
+        /* Corrected hover effect on each link */
+        .na-container a:hover {
+            border-color: #ffdbbb;
+        }
+
+    </style>
+    <link rel="stylesheet" href="styles-page1.css">
+</head>
+
+<body>
+    <a href="index.html" class="home-link">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg" alt="Home" />
+    </a>
+
+    <div class="north-america">
+        <h2>Explore Landmarks in North America</h2>
+        <p>Discover the beauty of North America through its national parks and landscapes.</p>
+    </div>
+
+    <div class="na-container">
+        <a href="canada.html" class="na-canada fade-in">
+            <h1>Canada</h1> 
+        </a>
+
+        <a href="usa.html" class="na-usa fade-in">
+            <h1>United States of America</h1>
+        </a>
+
+        <a href="mexico.html" class="na-mexico fade-in">
+            <h1>Mexico</h1>
+        </a>
+    </div>
+
+</body>
+</html>

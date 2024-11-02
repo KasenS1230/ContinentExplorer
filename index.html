@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continent Explorer</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Styles for centering and button without affecting background */
+    body {
+      margin: 0; /* Remove default margin */
+      position: relative; /* Position relative for absolute positioning of button */
+      text-align: center; /* Center text in the content */
+      height: 100vh; /* Full viewport height */
+      overflow: hidden; /* Prevent scrollbar during animation */
+    }
+
+    .content {
+      position: relative; /* Set relative positioning for content */
+      z-index: 1; /* Ensure content is above the background */
+    }
+
+    #play-button {
+      width: 100px; /* Set a fixed width for the button */
+      height: 100px; /* Set a fixed height for the button */
+      border-radius: 50%; /* Make the button circular */
+      background-color: white; /* White button color */
+      cursor: pointer; /* Change cursor to pointer */
+      display: flex; /* Use flexbox for centering */
+      justify-content: center; /* Center content horizontally */
+      align-items: center; /* Center content vertically */
+      transition: background-color 0.3s; /* Smooth transition */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+      border: none; /* Remove default border */
+      position: absolute; /* Position the button absolutely */
+      top: calc(50% + 100px); /* Center vertically and move down more */
+      left: 50%; /* Center horizontally */
+      transform: translate(-50%, -50%); /* Adjust for centering */
+    }
+
+    #play-button img {
+      width: 70%; /* Increase the size of the image by 1.1x (from 60% to 66%) */
+      height: auto; /* Maintain aspect ratio */
+    }
+
+    #play-button:hover {
+      background-color: #fff; /* Change background on hover */
+    }
+
+    .flying {
+      animation: flyAnimation 4s ease forwards; /* Apply smooth fly animation */
+    }
+
+    @keyframes flyAnimation {
+      0% {
+        transform: translate(-50%, -50%); /* Start at button position */
+      }
+      100% {
+        transform: translate(500vw, -50%); /* Move straight to the right */
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background with rotating Earth animation -->
+  <div class="background"></div>
+  <div class="overlay"></div>
+  
+  <!-- Main Content -->
+  <div class="content">
+    <h1>Discover National Landmarks in North America</h1>
+    
+    <!-- Play Button with Plane Logo -->
+    <button id="play-button" onclick="flyAndRedirect()">
+      <img src="https://imgs.search.brave.com/7BUAAyoHDZ-qZxqNeKVHjyZ4npR4ATL-4n1sU_2FK5U/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzA1LzQ3Lzk0Lzc4/LzM2MF9GXzU0Nzk0/Nzg1OF9iaFV1YTYx/d1pmMVZ4R2dnNjZG/ekpQbTFhQnlGZk5R/dy5qcGc" alt="Plane Icon">
+    </button>
+  </div>
+  
+  <script>
+    function flyAndRedirect() {
+        const button = document.getElementById('play-button');
+        button.classList.add('flying'); // Add flying class for animation
+
+        // Wait for the animation to complete before redirecting
+        setTimeout(() => {
+            window.location.href = 'page1.html'; // Redirect to page1.html
+        }, 500); // Delay matches the animation duration
+    }
+
+    // Listen for the Enter key in the document
+    document.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            flyAndRedirect(); // Call the fly and redirect function
+        }
+    });
+  </script>
+
+  <!-- JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

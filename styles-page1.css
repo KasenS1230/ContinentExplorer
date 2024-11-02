@@ -1,0 +1,155 @@
+body {
+  background-color: rgba(7, 51, 22, 0.8); /* Set the background color of the webpage */
+  margin: 0;                             /* Remove default margin */
+  font-family: 'Times New Roman', serif; /* Set font family to Times New Roman */
+}
+
+.page1-heading {
+  text-align: center;
+  margin-top: 50px;
+  color: #fff; /* Adjust color as needed */
+}
+
+.na-usa h1, 
+.na-mexico h1, 
+.na-canada h1 {
+    margin: 0;                             /* Remove default margin */
+    position: relative;                    /* Position relative for absolute positioning of text */
+    top: 50%;                              /* Move the text down to the center of the box */
+    transform: translateY(-50%);          /* Adjust for vertical centering */
+    font-weight: bold;                     /* Make text bold */
+    color: #fff;                           /* White color for better contrast */
+    text-align: center;                    /* Center the text */
+    font-size: 1.5rem;                     /* Adjust font size as needed */
+    text-shadow: 2px 2px 0px black, -2px -2px 0px black; /* Black outline effect */
+}
+
+/* Center the home button */
+.home-link {
+  display: flex;                     /* Use flexbox */
+  background-color: #fff;
+  justify-content: center;           /* Center horizontally */
+  position: absolute;
+  top: 10px;                         /* Keep the button near the top */
+  left: 50%;                         /* Position from the left */
+  transform: translateX(-50%);      /* Center it properly */
+}
+
+.home-link img {
+  width: 36px; /* Adjust size as needed */
+  height: 36px;
+}
+
+/* Optional: Keep it the same for visited state */
+.home-link:visited {
+  background-color: transparent; /* Ensure the background does not change */
+}
+
+/* North America Section Styles */
+.north-america {
+  background: #ffdbbb url() no-repeat center center; 
+  background-size: cover; /* Ensure the image covers the section */
+  width: 100%;               /* Set a specific width (adjust as needed) */
+  max-width: 1200px;       /* Set a max width to control size on larger screens */
+  margin: 65px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;      /* Center text within the container */
+}
+
+/* North America Section Title */
+.north-america h2 {
+  color: #000; /* Dark color for better contrast */
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+/* North America Section Content */
+.north-america p {
+  color: #333; /* Darker text for readability */
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+/* North America Images */
+.north-america img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  margin-top: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* lower box */
+/* Container to hold boxes in a row */
+.na-container {
+  display: flex;                  /* Enables Flexbox */
+  justify-content: space-around; /* Distributes space between boxes */
+  align-items: center;           /* Centers boxes vertically if needed */
+  width: 100%;                   /* Full width to make alignment effective */
+  margin: 0 auto;               /* Centers the container */
+  padding-top: 15px;            /* Optional: Adds padding around container */
+}
+
+/* Individual country boxes */
+.na-canada, .na-usa, .na-mexico {
+  background: rgba(117, 128, 134, 0.8); /* Gray overlay */
+  width: 27%;                              /* Adjust to control size of each box */
+  height: 200px;                           /* Set a fixed height for the boxes */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;                      /* Center text within each box */
+  overflow: hidden;                        /* Hides overflow text */
+  text-decoration: none;                   /* Removes underline from links */
+  color: inherit;                          /* Inherit the color from the parent */
+  font-family: 'Times New Roman', serif;  /* Use Times New Roman for text */
+  font-weight: bold;                       /* Make the font bold */
+  transition: transform 0.3s;             /* Smooth transition for scaling */
+  background-size: cover;                  /* Ensure the image covers the box */
+  margin-bottom: 10px;                     /* Add some margin to slightly lower the Canada image */
+  position: relative;                      /* Required for the pseudo-element */
+}
+
+/* Tint overlay for all country images */
+.na-canada:before,
+.na-usa:before,
+.na-mexico:before {
+  content: ""; /* Pseudo-element for overlay */
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Black overlay with 40% opacity */
+  border-radius: 8px; /* Match the box's border radius */
+  z-index: 1; /* Position behind the text */
+}
+
+.na-canada h1,
+.na-usa h1,
+.na-mexico h1 {
+  position: relative; /* Bring the text in front of the overlay */
+  z-index: 2; /* Ensure text is above the overlay */
+}
+
+.na-canada:hover, .na-usa:hover, .na-mexico:hover {
+  transform: scale(1.075);                /* Scale the boxes on hover to 1.075 */
+}
+
+/* Specific background for all boxes */
+.na-canada {
+  background-image: url(https://www.greatcanadianvanlines.com/wp-content/uploads/2018/08/shutterstock_334511276.jpg); /* Existing Canada image */
+  background-position: center top; /* Adjust position to show more of the tower */
+}
+
+.na-usa {
+  background-image: url(https://cdn.mos.cms.futurecdn.net/XsbvTN6PRi6PZtgEGvRsiE-970-80.jpg.webp);
+  background-position: center top; /* Adjust position if needed */
+}
+
+.na-mexico {
+  background-image: url(https://cdn.projectexpedition.com/wp-content/uploads/ylgyDGIqRFO6rW9fyxGP.jpeg);
+  background-position: center top; /* Adjust position if needed */
+}

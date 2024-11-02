@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Exchange</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            background-color: #e9ecef; /* Light grey background */
+            color: #333;
+        }
+
+        /* Navigation styles */
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            background-color: #007bff; /* Navigation bar background */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            font-size: 18px;
+            text-decoration: none;
+            color: #fff; /* White text for better contrast */
+            background-color: #007bff; /* Button background */
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .button img {
+            width: 28px; /* Smaller icon size */
+            height: 28px;
+            margin-right: 8px; /* Space between icon and text */
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #007bff;
+        }
+
+        .currency-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 15px;
+        }
+
+        input[type="number"], select {
+            width: 45%; /* Make inputs and selects equal width */
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            text-align: right; /* Align numeric input to the right */
+        }
+
+        input[type="text"] {
+            width: 45%; /* Full width for output */
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f8f8f8; /* Light background for output */
+            color: #000; /* Black text */
+            text-align: right; /* Align numeric input to the right */
+            cursor: not-allowed; /* Not editable */
+        }
+
+        button {
+            padding: 8px 16px; /* Smaller button size */
+            background-color: #007bff; /* Button background */
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        @media (max-width: 480px) {
+            .currency-row {
+                flex-direction: column; /* Stack elements on smaller screens */
+                align-items: stretch;
+            }
+
+            input[type="number"], select {
+                width: 100%; /* Full width on mobile */
+                margin: 5px 0; /* Margin adjustment */
+            }
+
+            input[type="text"] {
+                width: 100%; /* Full width on mobile */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Buttons -->
+    <div class="nav-container">
+        <a href="page1.html" class="button">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s" alt="Previous Page" /> Previous
+        </a>
+        <a href="index.html" class="button">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg" alt="Home" /> Home
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>Currency Exchange</h1>
+        <div class="currency-row">
+            <input type="number" id="amount" placeholder="Amount" />
+            <select class="currency-input" id="fromCurrency"></select>
+        </div>
+        <button id="swapButton">Swap</button>
+        <div class="currency-row">
+            <select class="currency-input" id="toCurrency"></select>
+            <input type="text" id="outputAmount" placeholder="Converted Amount" readonly />
+        </div>
+    </div>
+
+    <script>
+        const currencies = {
+            "CAD": "Canadian Dollar",
+            "USD": "United States Dollar",
+            "MXN": "Mexican Peso"
+        };
+
+        const exchangeRates = {
+            "CAD": {"USD": 0.75, "MXN": 14.93},
+            "USD": {"CAD": 1.33, "MXN": 19.93},
+            "MXN": {"CAD": 0.067, "USD": 0.050}
+        };
+
+        function populateCurrencyDropdowns() {
+            const fromCurrency = document.getElementById("fromCurrency");
+            const toCurrency = document.getElementById("toCurrency");
+
+            for (const [code, name] of Object.entries(currencies)) {
+                const fromOption = document.createElement("option");
+                fromOption.value = code;
+                fromOption.textContent = `${code} - ${name}`;
+                fromCurrency.appendChild(fromOption);
+
+                const toOption = document.createElement("option");
+                toOption.value = code;
+                toOption.textContent = `${code} - ${name}`;
+                toCurrency.appendChild(toOption);
+            }
+        }
+
+        function updateExchange() {
+            const amount = parseFloat(document.getElementById("amount").value);
+            const fromCurrency = document.getElementById("fromCurrency").value;
+            const toCurrency = document.getElementById("toCurrency").value;
+
+            if (!isNaN(amount) && amount >= 0) {
+                const convertedAmount = (amount * exchangeRates[fromCurrency][toCurrency]).toFixed(2);
+                document.getElementById("outputAmount").value = convertedAmount + " " + toCurrency;
+            } else {
+                document.getElementById("outputAmount").value = "";
+            }
+        }
+
+        function swapCurrencies() {
+            const fromCurrency = document.getElementById("fromCurrency");
+            const toCurrency = document.getElementById("toCurrency");
+
+            const temp = fromCurrency.value;
+            fromCurrency.value = toCurrency.value;
+            toCurrency.value = temp;
+
+            updateExchange();
+        }
+
+        document.getElementById("amount").addEventListener("input", updateExchange);
+        document.getElementById("fromCurrency").addEventListener("change", updateExchange);
+        document.getElementById("toCurrency").addEventListener("change", updateExchange);
+        document.getElementById("swapButton").addEventListener("click", swapCurrencies);
+
+        window.onload = populateCurrencyDropdowns;
+    </script>
+
+</body>
+</html>
