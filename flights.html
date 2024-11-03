@@ -11,6 +11,86 @@
   margin: 0;                             /* Remove default margin */
   font-family: 'Times New Roman', serif; /* Set font family to Times New Roman */
 }
+
+/* Navigation styles */
+.nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .button {
+            font-size: 18px;
+            text-decoration: none;
+            color: #333;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 8px;
+            margin: 0 10px;
+            display: flex;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+
+        .button img {
+            width: 36px;
+            height: 36px;
+        }
+
+
+.container2 {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(117, 128, 134, 0.8);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+
+        .flight-container {
+            text-align: center; /* Center text and inline elements */
+            margin: 20px;
+}
+
+.flight-container input {
+    margin-right: 10px; /* Space between input and button */
+}
+
+#flight-list {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .flight-item {
+            background: white;
+            padding: 15px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: box-shadow 0.2s;
+        }
+
+        .flight-item:hover {
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .flight-details {
+            margin: 5px 0;
+        }
+
+
+
 </style>
         </head>
 
@@ -21,33 +101,113 @@
 
 <body>
 
+
+
     
+
+
+
+
+
+    <!-- Navigation Buttons -->
+    <div class="nav-container">
+        <a href="page1.html" class="button">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s" alt="Previous Page" />
+        </a>
+        <a href="index.html" class="button">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg" alt="Home" />
+        </a>
+    </div>
+
+
+    <div class="container2">
+        <h1>Find Flights to Landmarks</h1>
+        </div>
+
+
+
+
+
+
+
+<div class="flight-container">
     <input type="text" id="location" placeholder="Enter your location">
     <button onclick="showFlights()">Get Flights</button>
     <ul id="flight-list"></ul>
+</div>
+<script>
+const flights = [
+    { from: "New York", to: "Statue of Liberty", price: "$150", eta: "30m" },
+    { from: "New York", to: "Central Park", price: "$100", eta: "20m" },
+    { from: "Los Angeles", to: "Hollywood Sign", price: "$100", eta: "30m" },
+    { from: "Los Angeles", to: "Griffith Observatory", price: "$80", eta: "25m" },
+    { from: "Chicago", to: "Millennium Park", price: "$80", eta: "20m" },
+    { from: "Chicago", to: "Willis Tower", price: "$100", eta: "30m" },
+    { from: "Miami", to: "South Beach", price: "$70", eta: "20m" },
+    { from: "San Francisco", to: "Golden Gate Bridge", price: "$100", eta: "30m" },
+    { from: "Seattle", to: "Space Needle", price: "$80", eta: "20m" },
+    { from: "Washington D.C.", to: "Lincoln Memorial", price: "$50", eta: "15m" },
+    { from: "Boston", to: "Freedom Trail", price: "$40", eta: "15m" },
+    { from: "Las Vegas", to: "The Strip", price: "$50", eta: "15m" },
+    { from: "Atlanta", to: "World of Coca-Cola", price: "$40", eta: "20m" },
+    { from: "Philadelphia", to: "Liberty Bell", price: "$40", eta: "15m" },
+    { from: "Phoenix", to: "Desert Botanical Garden", price: "$50", eta: "30m" },
+    { from: "Toronto", to: "CN Tower", price: "$60", eta: "20m" },
+    { from: "Vancouver", to: "Stanley Park", price: "$70", eta: "25m" },
+    { from: "Montreal", to: "Old Montreal", price: "$50", eta: "30m" },
+    { from: "Calgary", to: "Calgary Tower", price: "$60", eta: "20m" },
+    { from: "Ottawa", to: "Parliament Hill", price: "$50", eta: "25m" },
+    { from: "Mexico City", to: "Teotihuacan Pyramids", price: "$150", eta: "1h" },
+    { from: "Mexico City", to: "Chapultepec Park", price: "$40", eta: "15m" },
+    { from: "Cancun", to: "Chichen Itza", price: "$200", eta: "2h" },
+    { from: "Guadalajara", to: "Tequila Express", price: "$100", eta: "1h 30m" },
+    { from: "Monterrey", to: "Cerro de la Silla", price: "$80", eta: "30m" },
+    { from: "Tijuana", to: "Plaza Rio", price: "$30", eta: "15m" },
+    { from: "Los Angeles", to: "Santa Monica Pier", price: "$90", eta: "40m" },
+    { from: "San Diego", to: "Balboa Park", price: "$70", eta: "30m" },
+    { from: "Houston", to: "Space Center Houston", price: "$80", eta: "30m" },
+    { from: "Dallas", to: "Dallas Arboretum", price: "$60", eta: "20m" },
+    { from: "San Antonio", to: "The Alamo", price: "$50", eta: "15m" },
+    { from: "Orlando", to: "Walt Disney World", price: "$100", eta: "30m" },
+    { from: "Nashville", to: "Country Music Hall of Fame", price: "$50", eta: "20m" },
+    { from: "Portland", to: "Washington Park", price: "$40", eta: "25m" },
+    { from: "Charleston", to: "Historic Downtown", price: "$50", eta: "20m" },
+    { from: "Salt Lake City", to: "Temple Square", price: "$40", eta: "15m" },
+    { from: "Cincinnati", to: "Cincinnati Zoo", price: "$50", eta: "20m" },
+    { from: "Cleveland", to: "Rock and Roll Hall of Fame", price: "$60", eta: "30m" },
+    { from: "Detroit", to: "The Henry Ford", price: "$50", eta: "30m" },
+    { from: "Indianapolis", to: "Indianapolis Motor Speedway", price: "$60", eta: "30m" },
+    { from: "St. Louis", to: "Gateway Arch", price: "$50", eta: "20m" },
+    { from: "Baltimore", to: "Inner Harbor", price: "$40", eta: "15m" },
+    { from: "Raleigh", to: "North Carolina Museum of Natural Sciences", price: "$30", eta: "10m" },
+];
 
-    <script>
-        const flights = [
-            { from: "New York", to: "Toronto", price: "$200", duration: "1h 30m" },
-            { from: "Los Angeles", to: "Vancouver", price: "$300", duration: "3h 15m" },
-            { from: "Chicago", to: "Montreal", price: "$250", duration: "2h" },
-        ];
+function showFlights() {
+const userLocation = document.getElementById('location').value;
+const flightList = document.getElementById('flight-list');
+flightList.innerHTML = '';
 
-        function showFlights() {
-            const userLocation = document.getElementById('location').value;
-            const flightList = document.getElementById('flight-list');
-            flightList.innerHTML = '';
+const recommendedFlights = getRecommendedFlights(userLocation);
+if (recommendedFlights.length === 0) {
+    flightList.innerHTML = '<li>No flights found.</li>';
+} else {
+    recommendedFlights.forEach(flight => {
+        const listItem = document.createElement('li');
+        listItem.className = 'flight-item';
+        listItem.innerHTML = `
+            <div class="flight-details"><strong>From:</strong> ${flight.from}</div>
+            <div class="flight-details"><strong>To:</strong> ${flight.to}</div>
+            <div class="flight-details"><strong>Price:</strong> ${flight.price}</div>
+            <div class="flight-details"><strong>ETA:</strong> ${flight.eta}</div>
+        `;
+        flightList.appendChild(listItem);
+    });
+}
+}
 
-            const recommendedFlights = getRecommendedFlights(userLocation);
-            recommendedFlights.forEach(flight => {
-                const listItem = document.createElement('li');
-                listItem.textContent = `From: ${flight.from} To: ${flight.to}, Price: ${flight.price}, Duration: ${flight.duration}`;
-                flightList.appendChild(listItem);
-            });
-        }
-
-        function getRecommendedFlights(userLocation) {
-            return flights.filter(flight => flight.from.toLowerCase() === userLocation.toLowerCase());
-        }
-    </script>
+function getRecommendedFlights(userLocation) {
+return flights.filter(flight => flight.from.toLowerCase() === userLocation.toLowerCase());
+}
+</script>
 </body>
+</html>
