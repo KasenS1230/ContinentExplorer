@@ -5,14 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Currency Exchange</title>
     <style>
+
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            background-color: #e9ecef; /* Light grey background */
-            color: #333;
-        }
+  background-color: rgba(7, 51, 22, 0.8); /* Set the background color of the webpage */
+  margin: 0;                             /* Remove default margin */
+  font-family: 'Times New Roman', serif; /* Set font family to Times New Roman */
+}
 
         /* Navigation styles */
+       .nav-container {
+            display: flex;
+            justify-content: center;
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
         .button {
                 font-size: 18px;
                 text-decoration: none;
@@ -63,7 +71,7 @@
             max-width: 600px;
             margin: 40px auto;
             padding: 20px;
-            background: white;
+            background: rgba(117, 128, 134, 0.8);
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
             text-align: center;
@@ -102,6 +110,8 @@
             cursor: not-allowed; /* Not editable */
         }
 
+        
+
         @media (max-width: 480px) {
             .currency-row {
                 flex-direction: column; /* Stack elements on smaller screens */
@@ -139,6 +149,7 @@
             <input type="number" id="amount" placeholder="Amount" />
             <select class="currency-input" id="fromCurrency"></select>
         </div>
+
         <div class="currency-row">
             <select class="currency-input" id="toCurrency"></select>
             <input type="text" id="outputAmount" placeholder="Converted Amount" readonly />
@@ -191,6 +202,7 @@
         document.getElementById("amount").addEventListener("input", updateExchange);
         document.getElementById("fromCurrency").addEventListener("change", updateExchange);
         document.getElementById("toCurrency").addEventListener("change", updateExchange);
+        
 
         window.onload = populateCurrencyDropdowns;
     </script>

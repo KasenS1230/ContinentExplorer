@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Tracker</title>
+    <style>
+
+        body {
+  background-color: rgba(7, 51, 22, 0.8); /* Set the background color of the webpage */
+  margin: 0;                             /* Remove default margin */
+  font-family: 'Times New Roman', serif; /* Set font family to Times New Roman */
+}
+</style>
+        </head>
+
+
+
+
+
+
+<body>
+
+    
+    <input type="text" id="location" placeholder="Enter your location">
+    <button onclick="showFlights()">Get Flights</button>
+    <ul id="flight-list"></ul>
+
+    <script>
+        const flights = [
+            { from: "New York", to: "Toronto", price: "$200", duration: "1h 30m" },
+            { from: "Los Angeles", to: "Vancouver", price: "$300", duration: "3h 15m" },
+            { from: "Chicago", to: "Montreal", price: "$250", duration: "2h" },
+        ];
+
+        function showFlights() {
+            const userLocation = document.getElementById('location').value;
+            const flightList = document.getElementById('flight-list');
+            flightList.innerHTML = '';
+
+            const recommendedFlights = getRecommendedFlights(userLocation);
+            recommendedFlights.forEach(flight => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `From: ${flight.from} To: ${flight.to}, Price: ${flight.price}, Duration: ${flight.duration}`;
+                flightList.appendChild(listItem);
+            });
+        }
+
+        function getRecommendedFlights(userLocation) {
+            return flights.filter(flight => flight.from.toLowerCase() === userLocation.toLowerCase());
+        }
+    </script>
+</body>
