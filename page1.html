@@ -34,7 +34,143 @@
         .na-container a:hover {
             border-color: #ffdbbb;
         }
-        /*reviews*/
+        #openReviews{
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            transform: translate(80%, 50%);
+            border-radius: 5px;
+        }
+        .overlay {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+            z-index: 1000; /* Sit on top */
+            border-radius:10px;
+        }
+        
+        .overlay-content {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .close-overlay {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /*usa reviews*/
+        #openReviews2{
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            transform: translate(405%, 50%);
+            border-radius: 5px;
+        }
+        .overlay2 {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+            z-index: 1000; /* Sit on top */
+        }
+        
+        .overlay2-content {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .close-overlay2 {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            margin-top: 10px;
+        }
+
+        /*mexico reviews*/
+        #openReviews3{
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            position: absolute;
+            transform: translate(650%, 50%);
+            border-radius: 5px;
+        }
+        .overlay3 {
+            display: none; /* Hidden by default */
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background */
+            z-index: 1000; /* Sit on top */
+        }
+        
+        .overlay3-content {
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            width: 80%;
+            max-width: 500px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        .close-overlay3 {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        textarea {
+            width: 100%;
+            margin-top: 10px;
+        }
 
     </style>
     <link rel="stylesheet" href="styles-page1.css">
@@ -63,6 +199,136 @@
             <h1>Mexico</h1>
         </a>
     </div>
+    <button id="openReviews">See Reviews on Canada</button>
+    <!-- Full-screen overlay for reviews -->
+    <div id="reviewOverlay" class="overlay">
+    <div class="overlay-content">
+      <span class="close-overlay">&times;</span>
+      <h2>Reviews of Canada</h2>
+      
+      <!-- Sample reviews (could dynamically load these in a real app) -->
+      <div id="reviewList">
+        <p>- “Beautiful landscapes and very friendly people!”</p>
+        <p>- “Loved the food, especially in Quebec!”</p>
+      </div>
 
+      <form id="reviewForm">
+        <label for="newReview">Add Your Review:</label>
+        <textarea id="newReview" rows="4" placeholder="Share your experience..."></textarea>
+        <button type="submit">Submit Review</button>
+      </form>
+    </div>
+  </div>
+
+  <button id="openReviews2">See Reviews on USA</button>
+  <!-- Full-screen overlay for reviews -->
+  <div id="reviewOverlay2" class="overlay2">
+  <div class="overlay2-content">
+    <span class="close-overlay2">&times;</span>
+    <h2>Reviews of USA</h2>
+    
+    <!-- Sample reviews (could dynamically load these in a real app) -->
+    <div id="reviewList2">
+      <p>- “I had a great time at the Golden Gate Bridge! Make sure to visit the lookout point!”</p>
+      <p>- "America has my heart!"</p>
+    </div>
+
+    <form id="reviewForm2">
+      <label for="newReview2">Add Your Review:</label>
+      <textarea id="newReview2" rows="4" placeholder="Share your experience..."></textarea>
+      <button type="submit">Submit Review</button>
+    </form>
+  </div>
+</div>
+
+
+<button id="openReviews3">See Reviews on Mexico</button>
+<!-- Full-screen overlay for reviews -->
+<div id="reviewOverlay3" class="overlay3">
+<div class="overlay3-content">
+  <span class="close-overlay3">&times;</span>
+  <h2>Reviews of Mexico</h2>
+  
+  <!-- Sample reviews (could dynamically load these in a real app) -->
+  <div id="reviewList3">
+    <p>- “Mexico by far, has the best beaches I've seen, they're so clear and crystal blue!”</p>
+    <p>- "Wonderful experience with my family! A must visit place"</p>
+    <p>- "Visit the Mayan Ruins, they'll stun you!"</p>
+  </div>
+
+  <form id="reviewForm3">
+    <label for="newReview3">Add Your Review:</label>
+    <textarea id="newReview3" rows="4" placeholder="Share your experience..."></textarea>
+    <button type="submit">Submit Review</button>
+  </form>
+</div>
+</div>
+  <script>
+    // Select elements
+    const openReviewsButton = document.getElementById('openReviews');
+    const reviewOverlay = document.getElementById('reviewOverlay');
+    const closeOverlayButton = document.querySelector('.close-overlay');
+
+    // Function to open the overlay
+    openReviewsButton.onclick = function() {
+        reviewOverlay.style.display = "block";
+    }
+
+    // Function to close the overlay
+    closeOverlayButton.onclick = function() {
+        reviewOverlay.style.display = "none";
+    }
+
+    // Close overlay when clicking outside of the content area
+    window.onclick = function(event) {
+        if (event.target === reviewOverlay) {
+            reviewOverlay.style.display = "none";
+        }
+    }
+
+    // Select elements2
+    const openReviews2Button = document.getElementById('openReviews2');
+    const reviewOverlay2 = document.getElementById('reviewOverlay2');
+    const closeOverlay2Button = document.querySelector('.close-overlay2');
+
+    // Function to open the overlay
+    openReviews2Button.onclick = function() {
+        reviewOverlay2.style.display = "block";
+    }
+
+    // Function to close the overlay
+    closeOverlay2Button.onclick = function() {
+        reviewOverlay2.style.display = "none";
+    }
+
+    // Close overlay when clicking outside of the content area
+    window.onclick = function(event) {
+        if (event.target === reviewOverlay2) {
+            reviewOverlay2.style.display = "none";
+        }
+    }
+
+    // Select elements3
+    const openReviews3Button = document.getElementById('openReviews3');
+    const reviewOverlay3 = document.getElementById('reviewOverlay3');
+    const closeOverlay3Button = document.querySelector('.close-overlay3');
+
+    // Function to open the overlay
+    openReviews3Button.onclick = function() {
+        reviewOverlay3.style.display = "block";
+    }
+
+    // Function to close the overlay
+    closeOverlay3Button.onclick = function() {
+        reviewOverlay3.style.display = "none";
+    }
+
+    // Close overlay when clicking outside of the content area
+    window.onclick = function(event) {
+        if (event.target === reviewOverlay2) {
+            reviewOverlay3.style.display = "none";
+        }
+    }
+</script>
 </body>
 </html>
