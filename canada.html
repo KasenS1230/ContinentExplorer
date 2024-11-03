@@ -216,47 +216,68 @@
         <h1>Explore Canada</h1>
 
         <!-- Landmarks Section -->
-        <div class="category-box">
-            <h2>Landmarks</h2>
-            <ul>
-                <li class="list-item" onclick="showOverlay('https://cdn.britannica.com/62/85162-050-C8698F1F/CN-Tower-Toronto.jpg', 'The CN Tower, standing at 553.3 meters (1,815 feet), was once the tallest freestanding structure in the world. It features an observation deck with breathtaking views of Toronto and Lake Ontario. Visitors can dine in the 360 Restaurant, which rotates for a panoramic view of the city. The EdgeWalk is an exhilarating experience where you can walk around the tower\'s edge at a height of 356 meters. For families, the tower offers engaging exhibits about Toronto\'s history and technology. Make sure to visit during sunset for a stunning view!')">
-                    <img src="https://cdn.britannica.com/62/85162-050-C8698F1F/CN-Tower-Toronto.jpg" alt="CN Tower">
-                    <div>
-                        <strong>CN Tower</strong> - Toronto, Ontario
-                        <p>One of the tallest freestanding structures in the world. Features a rotating restaurant and thrilling EdgeWalk!</p>
-                    </div>
-                </li>
-                <li class="list-item" onclick="showOverlay('https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg', 'Banff National Park, established in 1885, is Canada\'s first national park and a UNESCO World Heritage Site. It covers over 6,600 square kilometers and is home to stunning turquoise lakes like Lake Louise and Moraine Lake, surrounded by the breathtaking Rocky Mountains. Visitors can enjoy various outdoor activities such as hiking, skiing, and wildlife viewing. In the summer, the park is alive with wildflowers, while winter transforms it into a ski paradise. Don\'t forget to check out the Banff Springs Hotel and the Banff Upper Hot Springs for relaxation.')">
-                    <img src="https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg" alt="Banff National Park">
-                    <div>
-                        <strong>Banff National Park</strong> - Alberta
-                        <p>Famous for turquoise lakes and majestic mountains. Enjoy hiking, skiing, and hot springs!</p>
-                    </div>
-                </li>
-                <li class="list-item" onclick="showOverlay('https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/rockcms/2024-04/240404-niagara-falls-mb-1234-d0d845.jpg', 'Niagara Falls is one of the most popular natural attractions in the world, featuring three stunning waterfalls: Horseshoe Falls, American Falls, and Bridal Veil Falls. The falls are a marvel of nature with an incredible flow rate and are surrounded by parks and viewing areas. Visitors can experience the falls up close on the Maid of the Mist boat tour or visit the Cave of the Winds. In the evening, the falls are illuminated in a spectacular light display, creating a magical atmosphere. The area also has attractions like the Butterfly Conservatory and Niagara Parks Botanical Gardens.')">
-                    <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/rockcms/2024-04/240404-niagara-falls-mb-1234-d0d845.jpg" alt="Niagara Falls">
-                    <div>
-                        <strong>Niagara Falls</strong> - Ontario
-                        <p>A natural wonder known for breathtaking cascades. Don't miss the boat tour and evening illuminations!</p>
-                    </div>
-                </li>
-                <li class="list-item" onclick="showOverlay('https://vineroutes.com/wp-content/uploads/2023/01/IMG_8714.jpg', 'Old Quebec City is a historic area recognized as a UNESCO World Heritage site. It features charming cobblestone streets and well-preserved buildings from the 17th and 18th centuries. Key attractions include the iconic Château Frontenac, which offers stunning views of the St. Lawrence River, and the historic Plains of Abraham, a pivotal site in Canadian history. Visitors can enjoy local cuisine at traditional restaurants and explore boutiques and art galleries. The Winter Carnival, held every February, features ice sculptures and lively parades.')">
-                    <img src="https://vineroutes.com/wp-content/uploads/2023/01/IMG_8714.jpg" alt="Old Quebec City">
-                    <div>
-                        <strong>Old Quebec City</strong> - Quebec
-                        <p>A UNESCO World Heritage site known for historic architecture. Explore the Winter Carnival and local cuisine!</p>
-                    </div>
-                </li>
-                <li class="list-item" onclick="showOverlay('https://www.chateau-whistler.com/content/uploads/2022/12/Winter-Skiing-1-864x700.jpg', 'Whistler Blackcomb is a renowned ski resort located in British Columbia, famous for its incredible skiing and snowboarding terrain. With over 8,000 acres of skiable terrain, it was a host site for the 2010 Winter Olympics. Visitors can enjoy winter sports, as well as summer activities such as mountain biking and hiking. The resort features a vibrant village with shops, restaurants, and nightlife. For breathtaking views, don\'t miss the Peak 2 Peak Gondola, the world\'s highest and longest lift, connecting Whistler and Blackcomb mountains.')">
-                    <img src="https://www.chateau-whistler.com/content/uploads/2022/12/Winter-Skiing-1-864x700.jpg" alt="Whistler Blackcomb">
-                    <div>
-                        <strong>Whistler Blackcomb</strong> - British Columbia
-                        <p>World-renowned ski resort and outdoor recreation destination. Take the Peak 2 Peak Gondola for breathtaking views!</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </div>
+        
+<div class="category-box">
+    <h2>Landmarks</h2>
+    <ul>
+        <li class="list-item" onclick="showOverlay(
+            'https://cdn.britannica.com/62/85162-050-C8698F1F/CN-Tower-Toronto.jpg', 
+            'The CN Tower, standing at 553.3 meters (1,815 feet), was once the tallest freestanding structure in the world. It features an observation deck with breathtaking views of Toronto and Lake Ontario. Visitors can dine in the 360 Restaurant, which rotates for a panoramic view of the city. The EdgeWalk is an exhilarating experience where you can walk around the tower\'s edge at a height of 356 meters. For families, the tower offers engaging exhibits about Toronto\'s history and technology. Make sure to visit during sunset for a stunning view!', 
+            '<ul><li><strong>Pros:</strong> Amazing views of Toronto, unique dining experience, family-friendly exhibits.</li><li><strong>Cons:</strong> Can be crowded, expensive dining options, weather can affect visibility.</li></ul>'
+        )">
+            <img src="https://cdn.britannica.com/62/85162-050-C8698F1F/CN-Tower-Toronto.jpg" alt="CN Tower">
+            <div>
+                <strong>CN Tower</strong> - Toronto, Ontario
+                <p>One of the tallest freestanding structures in the world. Features a rotating restaurant and thrilling EdgeWalk!</p>
+            </div>
+        </li>
+        <li class="list-item" onclick="showOverlay(
+            'https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg', 
+            'Banff National Park, established in 1885, is Canada\'s first national park and a UNESCO World Heritage Site. It covers over 6,600 square kilometers and is home to stunning turquoise lakes like Lake Louise and Moraine Lake, surrounded by the breathtaking Rocky Mountains. Visitors can enjoy various outdoor activities such as hiking, skiing, and wildlife viewing. In the summer, the park is alive with wildflowers, while winter transforms it into a ski paradise. Don\'t forget to check out the Banff Springs Hotel and the Banff Upper Hot Springs for relaxation.', 
+            '<ul><li><strong>Pros:</strong> Stunning natural beauty, diverse outdoor activities, rich wildlife.</li><li><strong>Cons:</strong> Can be very crowded, accommodation can be expensive, unpredictable weather.</li></ul>'
+        )">
+            <img src="https://cdn.britannica.com/71/94371-050-293AE931/Mountains-region-Ten-Peaks-Moraine-Lake-Alberta.jpg" alt="Banff National Park">
+            <div>
+                <strong>Banff National Park</strong> - Alberta
+                <p>Famous for turquoise lakes and majestic mountains. Enjoy hiking, skiing, and hot springs!</p>
+            </div>
+        </li>
+        <li class="list-item" onclick="showOverlay(
+            'https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/rockcms/2024-04/240404-niagara-falls-mb-1234-d0d845.jpg', 
+            'Niagara Falls is one of the most popular natural attractions in the world, featuring three stunning waterfalls: Horseshoe Falls, American Falls, and Bridal Veil Falls. The falls are a marvel of nature with an incredible flow rate and are surrounded by parks and viewing areas. Visitors can experience the falls up close on the Maid of the Mist boat tour or visit the Cave of the Winds. In the evening, the falls are illuminated in a spectacular light display, creating a magical atmosphere. The area also has attractions like the Butterfly Conservatory and Niagara Parks Botanical Gardens.', 
+            '<ul><li><strong>Pros:</strong> Iconic natural attraction, great photo opportunities, multiple viewing points.</li><li><strong>Cons:</strong> Can be overly commercialized, long wait times for tours, weather can impact visibility.</li></ul>'
+        )">
+            <img src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-1000w,f_auto,q_auto:best/rockcms/2024-04/240404-niagara-falls-mb-1234-d0d845.jpg" alt="Niagara Falls">
+            <div>
+                <strong>Niagara Falls</strong> - Ontario
+                <p>A natural wonder known for breathtaking cascades. Don't miss the boat tour and evening illuminations!</p>
+            </div>
+        </li>
+        <li class="list-item" onclick="showOverlay(
+            'https://vineroutes.com/wp-content/uploads/2023/01/IMG_8714.jpg', 
+            'Old Quebec City is a historic area recognized as a UNESCO World Heritage site. It features charming cobblestone streets and well-preserved buildings from the 17th and 18th centuries. Key attractions include the iconic Château Frontenac, which offers stunning views of the St. Lawrence River, and the historic Plains of Abraham, a pivotal site in Canadian history. Visitors can enjoy local cuisine at traditional restaurants and explore boutiques and art galleries. The Winter Carnival, held every February, features ice sculptures and lively parades.', 
+            '<ul><li><strong>Pros:</strong> Rich history, beautiful architecture, vibrant culture and festivals.</li><li><strong>Cons:</strong> Can be crowded, higher prices in tourist areas, winter weather can be harsh.</li></ul>'
+        )">
+            <img src="https://vineroutes.com/wp-content/uploads/2023/01/IMG_8714.jpg" alt="Old Quebec City">
+            <div>
+                <strong>Old Quebec City</strong> - Quebec
+                <p>A UNESCO World Heritage site known for historic architecture. Explore the Winter Carnival and local cuisine!</p>
+            </div>
+        </li>
+        <li class="list-item" onclick="showOverlay(
+            'https://www.chateau-whistler.com/content/uploads/2022/12/Winter-Skiing-1-864x700.jpg', 
+            'Whistler Blackcomb is a renowned ski resort located in British Columbia, famous for its incredible skiing and snowboarding terrain. With over 8,000 acres of skiable terrain, it was a host site for the 2010 Winter Olympics. Visitors can enjoy winter sports, as well as summer activities such as mountain biking and hiking. The resort features a vibrant village with shops, restaurants, and nightlife. For breathtaking views, don\'t miss the Peak 2 Peak Gondola, the world\'s highest and longest lift, connecting Whistler and Blackcomb mountains.', 
+            '<ul><li><strong>Pros:</strong> Extensive ski terrain, great for outdoor enthusiasts, vibrant après-ski scene.</li><li><strong>Cons:</strong> Can be expensive, busy during peak seasons, limited activities outside of winter sports.</li></ul>'
+        )">
+            <img src="https://www.chateau-whistler.com/content/uploads/2022/12/Winter-Skiing-1-864x700.jpg" alt="Whistler Blackcomb">
+            <div>
+                <strong>Whistler Blackcomb</strong> - British Columbia
+                <p>World-renowned ski resort and outdoor recreation destination. Take the Peak 2 Peak Gondola for breathtaking views!</p>
+            </div>
+        </li>
+    </ul>
+</div>
+
 
     <!-- Overlay -->
     <div class="overlay" id="overlay">
@@ -275,9 +296,10 @@
 
     <script>
         // Function to show overlay
-        function showOverlay(imageSrc, text) {
+        function showOverlay(imageSrc, subheading, prosAndCons, additionalInfo) {
             document.getElementById("overlay-image").src = imageSrc;
-            document.getElementById("overlay-text").innerText = text;
+            document.getElementById("overlay-subheading").innerHTML = subheading;
+            document.getElementById("overlay-text").innerHTML = prosAndCons + additionalInfo;
             document.getElementById("overlay").style.display = "flex";
         }
 
