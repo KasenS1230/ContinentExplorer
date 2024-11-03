@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +15,6 @@
         }
 
         /* Navigation styles */
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            padding: 10px 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-
         .button {
             font-size: 18px;
             text-decoration: none;
@@ -40,25 +33,47 @@
             height: 36px;
         }
 
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            /* Space buttons within the container */
+            align-items: center;
+            /* Vertically center the items */
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            position: relative;
+            /* Enable positioning of child elements */
+            padding: 15px;
+        }
+
+        .previous-button {
+            position: absolute;
+            /* Position it absolutely */
+        }
+
+        .home-button {
+            position: absolute;
+            /* Position it absolutely */
+            left: 50%;
+            /* Center it in the container */
+            transform: translateX(-50%);
+            /* Offset by half its width to center */
+        }
+
         .currency-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000; /* Ensure it stays above other elements */
             font-size: 18px;
-            color: #fff;
-            background-color: #007bff;
+            color: #000;
+            /* Change text color to black */
+            background-color: #fff;
             padding: 10px 15px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin-left: auto;
+            /* Align to the right */
         }
-
-        .currency-button:hover {
-            background-color: #0056b3;
-        }
-
 
         /* Content and box styling */
         .content {
@@ -81,6 +96,7 @@
             text-align: center;
             color: #000;
         }
+
         h2 {
             color: #fff;
             text-align: center;
@@ -105,7 +121,8 @@
         }
 
         .list-item img {
-            width: 60px; /* Smaller image size */
+            width: 60px;
+            /* Smaller image size */
             height: 60px;
             border-radius: 8px;
             margin-right: 15px;
@@ -134,7 +151,8 @@
             justify-content: center;
             align-items: center;
             z-index: 2000;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
+            /* Prevent scrolling */
         }
 
         .overlay-content {
@@ -146,14 +164,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: auto; /* Allow scrolling for the content if it overflows */
+            overflow-y: auto;
+            /* Allow scrolling for the content if it overflows */
         }
 
         .overlay img {
-            max-width: 50%; /* 50% of the overlay's width */
-            max-height: 400px; /* Fixed height */
+            max-width: 50%;
+            /* 50% of the overlay's width */
+            max-height: 400px;
+            /* Fixed height */
             border-radius: 8px;
-            margin-bottom: 15px; /* Space between the image and text */
+            margin-bottom: 15px;
+            /* Space between the image and text */
         }
 
         .close-btn {
@@ -185,6 +207,10 @@
             transition: bottom 0.5s ease, opacity 0.3s;
         }
 
+        ul {
+            padding-inline-start: 0;
+        }
+
         .scroll-to-top.show {
             bottom: 30px;
             opacity: 1;
@@ -196,19 +222,20 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation Buttons -->
     <div class="nav-container">
-        <a href="page1.html" class="button">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s" alt="Previous Page" />
+        <a href="page1.html" class="button previous-button">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s"
+                alt="Previous Page" />
         </a>
-        <a href="index.html" class="button">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg" alt="Home" />
+        <a href="index.html" class="button home-button">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg"
+                alt="Home" />
         </a>
+        <button class="currency-button" onclick="window.location.href='currency.html'">Currency Exchange</button>
     </div>
-
-    <button class="currency-button" onclick="window.location.href='currency.html'">Currency Exchanger</button>
-    
     <!-- Main Content -->
     <div class="content">
         <h1>Explore USA</h1>
@@ -217,39 +244,56 @@
         <div class="category-box">
             <h2>Landmarks</h2>
             <ul>
-                <li class="list-item" onclick="showOverlay('https://www.statueofliberty.org/wp-content/uploads/2020/07/Statue-of-liberty.jpg', 'The Statue of Liberty, a gift from France, has symbolized freedom and democracy since 1886. Located on Liberty Island in New York Harbor, visitors can take a ferry to the island, explore the museum, and even ascend to the crown for stunning views of New York City’s skyline. The nearby Ellis Island offers an in-depth look at America’s immigrant history.Flights to New York City average $200–$400 from within the U.S., $400–$800 from Europe, and around $600–$1,200 from Asia')">
-                    <img src="https://www.statueofliberty.org/wp-content/uploads/2020/07/Statue-of-liberty.jpg" alt="CN Tower">
+                <li class="list-item"
+                    onclick="showOverlay('https://www.statueofliberty.org/wp-content/uploads/2020/07/Statue-of-liberty.jpg', 'The Statue of Liberty, a gift from France, has symbolized freedom and democracy since 1886. Located on Liberty Island in New York Harbor, visitors can take a ferry to the island, explore the museum, and even ascend to the crown for stunning views of New York City’s skyline. The nearby Ellis Island offers an in-depth look at America’s immigrant history.Flights to New York City average $200–$400 from within the U.S., $400–$800 from Europe, and around $600–$1,200 from Asia')">
+                    <img src="https://www.statueofliberty.org/wp-content/uploads/2020/07/Statue-of-liberty.jpg"
+                        alt="CN Tower">
                     <div>
                         <strong>Statue of Liberty</strong> - New York, New York
-                        <p>A gift from France symbolizing freedom, the Statue of Liberty stands in New York Harbor as a beacon of democracy. Visitors can tour the pedestal, museum, and even climb to the crown.</p>
+                        <p>A gift from France symbolizing freedom, the Statue of Liberty stands in New York Harbor as a
+                            beacon of democracy. Visitors can tour the pedestal, museum, and even climb to the crown.
+                        </p>
                     </div>
                 </li>
-                <li class="list-item" onclick="showOverlay('https://www.globalnationalparks.com/wp-content/uploads/national-park-grand-canyon.jpg', 'The Grand Canyon is one of the world’s most famous natural wonders, created by millions of years of erosion by the Colorado River. Visitors can explore the South Rim, which is open year-round, or the more remote North Rim, accessible in summer. The park offers countless trails, scenic viewpoints, and guided tours, making it ideal for outdoor enthusiasts.To reach the Grand Canyon, most visitors fly into Phoenix or Las Vegas, with flights averaging $200–$500 within the U.S. and $500–$900 from international destinations.')">
-                    <img src="https://www.globalnationalparks.com/wp-content/uploads/national-park-grand-canyon.jpg" alt="Banff National Park">
+                <li class="list-item"
+                    onclick="showOverlay('https://www.globalnationalparks.com/wp-content/uploads/national-park-grand-canyon.jpg', 'The Grand Canyon is one of the world’s most famous natural wonders, created by millions of years of erosion by the Colorado River. Visitors can explore the South Rim, which is open year-round, or the more remote North Rim, accessible in summer. The park offers countless trails, scenic viewpoints, and guided tours, making it ideal for outdoor enthusiasts.To reach the Grand Canyon, most visitors fly into Phoenix or Las Vegas, with flights averaging $200–$500 within the U.S. and $500–$900 from international destinations.')">
+                    <img src="https://www.globalnationalparks.com/wp-content/uploads/national-park-grand-canyon.jpg"
+                        alt="Banff National Park">
                     <div>
                         <strong>Grand Canyon</strong> - Arizona
-                        <p>Carved by the Colorado River, the Grand Canyon is a vast, awe-inspiring landscape showcasing millions of years of geological history, with stunning views from its rim and numerous hiking trails.</p>
+                        <p>Carved by the Colorado River, the Grand Canyon is a vast, awe-inspiring landscape showcasing
+                            millions of years of geological history, with stunning views from its rim and numerous
+                            hiking trails.</p>
                     </div>
                 </li>
-                <li class="list-item" onclick="showOverlay('https://assets.editorial.aetnd.com/uploads/2015/02/topic-golden-gate-bridge-gettyimages-177770941.jpg?width=1920&height=960&crop=1920%3A960%2Csmart&quality=75&auto=webp', 'The Golden Gate Bridge, an iconic symbol of San Francisco, connects the city to Marin County and spans 1.7 miles across the San Francisco Bay. Visitors can walk or bike across the bridge, taking in the impressive views of the Pacific Ocean and the bay, especially when the bridge is partially obscured by fog, creating a magical effect. Domestic flights to San Francisco average $200–$400, while international flights are around $500–$1,200 depending on the season.')">
-                    <img src="https://assets.editorial.aetnd.com/uploads/2015/02/topic-golden-gate-bridge-gettyimages-177770941.jpg?width=1920&height=960&crop=1920%3A960%2Csmart&quality=75&auto=webp" alt="Niagara Falls">
+                <li class="list-item"
+                    onclick="showOverlay('https://assets.editorial.aetnd.com/uploads/2015/02/topic-golden-gate-bridge-gettyimages-177770941.jpg?width=1920&height=960&crop=1920%3A960%2Csmart&quality=75&auto=webp', 'The Golden Gate Bridge, an iconic symbol of San Francisco, connects the city to Marin County and spans 1.7 miles across the San Francisco Bay. Visitors can walk or bike across the bridge, taking in the impressive views of the Pacific Ocean and the bay, especially when the bridge is partially obscured by fog, creating a magical effect. Domestic flights to San Francisco average $200–$400, while international flights are around $500–$1,200 depending on the season.')">
+                    <img src="https://assets.editorial.aetnd.com/uploads/2015/02/topic-golden-gate-bridge-gettyimages-177770941.jpg?width=1920&height=960&crop=1920%3A960%2Csmart&quality=75&auto=webp"
+                        alt="Niagara Falls">
                     <div>
                         <strong>Golden Gate Bridge</strong> - San Francisco, California
-                        <p>This iconic orange-red suspension bridge links San Francisco to Marin County, offering breathtaking views of SFO bay and Pacific Ocean, often enveloped in mist.</p>
+                        <p>This iconic orange-red suspension bridge links San Francisco to Marin County, offering
+                            breathtaking views of SFO bay and Pacific Ocean, often enveloped in mist.</p>
                     </div>
                 </li>
-                <li class="list-item" onclick="showOverlay('https://www.travelandleisure.com/thmb/OuQ-FAg3QZH5uTzivMy86NEFI-Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mount-rushmore-south-dakota-RUSHMORE0317-10c603a0e75e44a9a04ee36457095990.jpg', 'Mount Rushmore features the carved faces of four U.S. presidents—George Washington, Thomas Jefferson, Theodore Roosevelt, and Abraham Lincoln—honoring their contributions to American history. Located in the scenic Black Hills, visitors can take guided tours, attend ranger talks, and explore the nearby Presidential Trail.The closest major airport is Rapid City, South Dakota, with flights averaging $250–$450 from within the U.S. International travelers may need connecting flights, with costs around $600–$1,000.')">
-                    <img src="https://www.travelandleisure.com/thmb/OuQ-FAg3QZH5uTzivMy86NEFI-Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mount-rushmore-south-dakota-RUSHMORE0317-10c603a0e75e44a9a04ee36457095990.jpg" alt="Old Quebec City">
+                <li class="list-item"
+                    onclick="showOverlay('https://www.travelandleisure.com/thmb/OuQ-FAg3QZH5uTzivMy86NEFI-Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mount-rushmore-south-dakota-RUSHMORE0317-10c603a0e75e44a9a04ee36457095990.jpg', 'Mount Rushmore features the carved faces of four U.S. presidents—George Washington, Thomas Jefferson, Theodore Roosevelt, and Abraham Lincoln—honoring their contributions to American history. Located in the scenic Black Hills, visitors can take guided tours, attend ranger talks, and explore the nearby Presidential Trail.The closest major airport is Rapid City, South Dakota, with flights averaging $250–$450 from within the U.S. International travelers may need connecting flights, with costs around $600–$1,000.')">
+                    <img src="https://www.travelandleisure.com/thmb/OuQ-FAg3QZH5uTzivMy86NEFI-Q=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/mount-rushmore-south-dakota-RUSHMORE0317-10c603a0e75e44a9a04ee36457095990.jpg"
+                        alt="Old Quebec City">
                     <div>
                         <strong>Mount Rushmore</strong> - South Dakota
-                        <p>Featuring the carved faces of four U.S. presidents, Mount Rushmore celebrates American heritage against the scenic backdrop of South Dakota’s Black Hills.</p>
+                        <p>Featuring the carved faces of four U.S. presidents, Mount Rushmore celebrates American
+                            heritage against the scenic backdrop of South Dakota’s Black Hills.</p>
                     </div>
                 </li>
-                <li class="list-item" onclick="showOverlay('https://wallup.net/wp-content/uploads/2019/09/481852-walt-disney-world-resort-disney-orlando-floride-florida-usa-universal-studio-castel-hotel-mickey-night-light-stores-entertainment-parc-childrens-offices-storehouses-towers-buildings-cities-1.jpg','Known as The Most Magical Place on Earth, Walt Disney World features four theme parks—Magic Kingdom, Epcot, Disneys Hollywood Studios, and Disneys Animal Kingdom—as well as two water parks, numerous resorts, and entertainment districts. Perfect for families and fans, Disney World offers a variety of experiences, from thrilling rides to immersive storytelling.Flights to Orlando average $150–$400 from within the U.S., while international flights vary from $500–$1,200 depending on the season and country.')">
-                    <img src="https://wallup.net/wp-content/uploads/2019/09/481852-walt-disney-world-resort-disney-orlando-floride-florida-usa-universal-studio-castel-hotel-mickey-night-light-stores-entertainment-parc-childrens-offices-storehouses-towers-buildings-cities-1.jpg" alt="Old Quebec City">
+                <li class="list-item"
+                    onclick="showOverlay('https://wallup.net/wp-content/uploads/2019/09/481852-walt-disney-world-resort-disney-orlando-floride-florida-usa-universal-studio-castel-hotel-mickey-night-light-stores-entertainment-parc-childrens-offices-storehouses-towers-buildings-cities-1.jpg','Known as The Most Magical Place on Earth, Walt Disney World features four theme parks—Magic Kingdom, Epcot, Disneys Hollywood Studios, and Disneys Animal Kingdom—as well as two water parks, numerous resorts, and entertainment districts. Perfect for families and fans, Disney World offers a variety of experiences, from thrilling rides to immersive storytelling.Flights to Orlando average $150–$400 from within the U.S., while international flights vary from $500–$1,200 depending on the season and country.')">
+                    <img src="https://wallup.net/wp-content/uploads/2019/09/481852-walt-disney-world-resort-disney-orlando-floride-florida-usa-universal-studio-castel-hotel-mickey-night-light-stores-entertainment-parc-childrens-offices-storehouses-towers-buildings-cities-1.jpg"
+                        alt="Old Quebec City">
                     <div>
                         <strong>Walt Disney World</strong> - Orlando, Florida
-                        <p>Walt Disney World offers four theme parks and countless attractions, making it a dream destination for families and fans worldwide.</p>
+                        <p>Walt Disney World offers four theme parks and countless attractions, making it a dream
+                            destination for families and fans worldwide.</p>
                     </div>
                 </li>
             </ul>
@@ -267,7 +311,7 @@
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTopBtn" onclick="scrollToTop()">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828910.png" alt="Scroll to Top">
+        <img src="https://imgs.search.brave.com/pPSCAS9Wfqrm5ua9UY3p4C3ETB1M-Iyfp77WeMjUxxk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE2/MTI5NTQwMi92ZWN0/b3IvdXAtYnV0dG9u/LWljb24tb24td2hp/dGUtYmFja2dyb3Vu/ZC5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9TG1sQmFjejg0/emtoODZubno2cHJC/bDM3Zml6ZjA3Z3o2/dmE4UE1pM1JRbz0" alt="Scroll to Top">
     </button>
 
     <script>
@@ -284,7 +328,7 @@
         }
 
         // Scroll to Top Functionality
-        window.onscroll = function() {
+        window.onscroll = function () {
             let scrollToTopBtn = document.getElementById("scrollToTopBtn");
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                 scrollToTopBtn.classList.add('show');
@@ -299,4 +343,5 @@
         }
     </script>
 </body>
+
 </html>

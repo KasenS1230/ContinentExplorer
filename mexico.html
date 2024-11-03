@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,14 +15,6 @@
         }
 
         /* Navigation styles */
-        .nav-container {
-            display: flex;
-            justify-content: center;
-            padding: 10px 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
-        }
-
         .button {
             font-size: 18px;
             text-decoration: none;
@@ -40,25 +33,51 @@
             height: 36px;
         }
 
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            /* Space buttons within the container */
+            align-items: center;
+            /* Vertically center the items */
+            padding: 10px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            position: relative;
+            /* Enable positioning of child elements */
+            padding: 15px;
+        }
+
+        .previous-button {
+            position: absolute;
+            /* Position it absolutely */
+        }
+
+        .home-button {
+            position: absolute;
+            /* Position it absolutely */
+            left: 50%;
+            /* Center it in the container */
+            transform: translateX(-50%);
+            /* Offset by half its width to center */
+        }
+
         .currency-button {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 1000; /* Ensure it stays above other elements */
             font-size: 18px;
-            color: #fff;
-            background-color: #007bff;
+            color: #000;
+            /* Change text color to black */
+            background-color: #fff;
             padding: 10px 15px;
             border: none;
             border-radius: 8px;
             cursor: pointer;
             transition: background-color 0.3s;
+            margin-left: auto;
+            /* Align to the right */
         }
 
-        .currency-button:hover {
-            background-color: #0056b3;
+        ul {
+            padding-inline-start: 0;
         }
-
 
         /* Content and box styling */
         .content {
@@ -81,6 +100,7 @@
             text-align: center;
             color: #000;
         }
+
         h2 {
             color: #fff;
             text-align: center;
@@ -105,7 +125,8 @@
         }
 
         .list-item img {
-            width: 60px; /* Smaller image size */
+            width: 60px;
+            /* Smaller image size */
             height: 60px;
             border-radius: 8px;
             margin-right: 15px;
@@ -134,7 +155,8 @@
             justify-content: center;
             align-items: center;
             z-index: 2000;
-            overflow: hidden; /* Prevent scrolling */
+            overflow: hidden;
+            /* Prevent scrolling */
         }
 
         .overlay-content {
@@ -146,14 +168,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            overflow-y: auto; /* Allow scrolling for the content if it overflows */
+            overflow-y: auto;
+            /* Allow scrolling for the content if it overflows */
         }
 
         .overlay img {
-            max-width: 50%; /* 50% of the overlay's width */
-            max-height: 400px; /* Fixed height */
+            max-width: 50%;
+            /* 50% of the overlay's width */
+            max-height: 400px;
+            /* Fixed height */
             border-radius: 8px;
-            margin-bottom: 15px; /* Space between the image and text */
+            margin-bottom: 15px;
+            /* Space between the image and text */
         }
 
         .close-btn {
@@ -196,19 +222,20 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Navigation Buttons -->
     <div class="nav-container">
-        <a href="page1.html" class="button">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s" alt="Previous Page" />
+        <a href="page1.html" class="button previous-button">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s"
+                alt="Previous Page" />
         </a>
-        <a href="index.html" class="button">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg" alt="Home" />
+        <a href="index.html" class="button home-button">
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg"
+                alt="Home" />
         </a>
+        <button class="currency-button" onclick="window.location.href='currency.html'">Currency Exchange</button>
     </div>
-
-    <button class="currency-button" onclick="window.location.href='currency.html'">Currency Exchanger</button>
-    
     <!-- Main Content -->
     <div class="content">
         <h1>Explore Mexico</h1>
@@ -217,39 +244,58 @@
         <div class="category-box">
             <h2>Landmarks</h2>
             <ul>
-                <li class="list-item" onclick="showOverlay('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d2/04/66/photo5jpg.jpg?w=1400&h=800&s=1', 'The CN Tower, standing at 553.3 meters (1,815 feet), was once the tallest freestanding structure in the world. It features an observation deck with breathtaking views of Toronto and Lake Ontario. Visitors can dine in the 360 Restaurant, which rotates for a panoramic view of the city. The EdgeWalk is an exhilarating experience where you can walk around the tower\'s edge at a height of 356 meters. For families, the tower offers engaging exhibits about Toronto\'s history and technology. Make sure to visit during sunset for a stunning view!')">
-                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d2/04/66/photo5jpg.jpg?w=1400&h=800&s=1" alt="CN Tower">
+                <li class="list-item"
+                    onclick="showOverlay('https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d2/04/66/photo5jpg.jpg?w=1400&h=800&s=1', 'The CN Tower, standing at 553.3 meters (1,815 feet), was once the tallest freestanding structure in the world. It features an observation deck with breathtaking views of Toronto and Lake Ontario. Visitors can dine in the 360 Restaurant, which rotates for a panoramic view of the city. The EdgeWalk is an exhilarating experience where you can walk around the tower\'s edge at a height of 356 meters. For families, the tower offers engaging exhibits about Toronto\'s history and technology. Make sure to visit during sunset for a stunning view!')">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/1c/d2/04/66/photo5jpg.jpg?w=1400&h=800&s=1"
+                        alt="CN Tower">
                     <div>
                         <strong>Chichen Itza</strong> - Yucatan
-                        <p>This ancient Mayan city is famous for the El Castillo pyramid (Temple of Kukulcán) and is a UNESCO World Heritage Site. It's one of the New Seven Wonders of the World, known for its impressive architecture and astronomical significance.</p>
+                        <p>This ancient Mayan city is famous for the El Castillo pyramid (Temple of Kukulcán) and is a
+                            UNESCO World Heritage Site. It's one of the New Seven Wonders of the World, known for its
+                            impressive architecture and astronomical significance.</p>
                     </div>
                 </li>
-                <li class="list-item" onclick="showOverlay('https://cdn.britannica.com/02/147902-050-BA146002/Pyramid-of-the-Sun-city-Mexico-Teotihuacan.jpg', 'Banff National Park, established in 1885, is Canada\'s first national park and a UNESCO World Heritage Site. It covers over 6,600 square kilometers and is home to stunning turquoise lakes like Lake Louise and Moraine Lake, surrounded by the breathtaking Rocky Mountains. Visitors can enjoy various outdoor activities such as hiking, skiing, and wildlife viewing. In the summer, the park is alive with wildflowers, while winter transforms it into a ski paradise. Don\'t forget to check out the Banff Springs Hotel and the Banff Upper Hot Springs for relaxation.')">
-                    <img src="https://cdn.britannica.com/02/147902-050-BA146002/Pyramid-of-the-Sun-city-Mexico-Teotihuacan.jpg" alt="Banff National Park">
+                <li class="list-item"
+                    onclick="showOverlay('https://cdn.britannica.com/02/147902-050-BA146002/Pyramid-of-the-Sun-city-Mexico-Teotihuacan.jpg', 'Banff National Park, established in 1885, is Canada\'s first national park and a UNESCO World Heritage Site. It covers over 6,600 square kilometers and is home to stunning turquoise lakes like Lake Louise and Moraine Lake, surrounded by the breathtaking Rocky Mountains. Visitors can enjoy various outdoor activities such as hiking, skiing, and wildlife viewing. In the summer, the park is alive with wildflowers, while winter transforms it into a ski paradise. Don\'t forget to check out the Banff Springs Hotel and the Banff Upper Hot Springs for relaxation.')">
+                    <img src="https://cdn.britannica.com/02/147902-050-BA146002/Pyramid-of-the-Sun-city-Mexico-Teotihuacan.jpg"
+                        alt="Banff National Park">
                     <div>
                         <strong>Teotihuacan</strong> - Teotihuacan, Mexico
-                        <p>Located just outside Mexico City, this ancient Mesoamerican city features the massive Pyramid of the Sun and Pyramid of the Moon. Visitors can explore the Avenue of the Dead and see murals that depict the life of this ancient civilization.</p>
+                        <p>Located just outside Mexico City, this ancient Mesoamerican city features the massive Pyramid
+                            of the Sun and Pyramid of the Moon. Visitors can explore the Avenue of the Dead and see
+                            murals that depict the life of this ancient civilization.</p>
                     </div>
                 </li>
-                <li class="list-item" onclick="showOverlay('https://images.odigoo.com/images/media/cenonte-ik-kil/full-view.jpg', 'Niagara Falls is one of the most popular natural attractions in the world, featuring three stunning waterfalls: Horseshoe Falls, American Falls, and Bridal Veil Falls. The falls are a marvel of nature with an incredible flow rate and are surrounded by parks and viewing areas. Visitors can experience the falls up close on the Maid of the Mist boat tour or visit the Cave of the Winds. In the evening, the falls are illuminated in a spectacular light display, creating a magical atmosphere. The area also has attractions like the Butterfly Conservatory and Niagara Parks Botanical Gardens.')">
+                <li class="list-item"
+                    onclick="showOverlay('https://images.odigoo.com/images/media/cenonte-ik-kil/full-view.jpg', 'Niagara Falls is one of the most popular natural attractions in the world, featuring three stunning waterfalls: Horseshoe Falls, American Falls, and Bridal Veil Falls. The falls are a marvel of nature with an incredible flow rate and are surrounded by parks and viewing areas. Visitors can experience the falls up close on the Maid of the Mist boat tour or visit the Cave of the Winds. In the evening, the falls are illuminated in a spectacular light display, creating a magical atmosphere. The area also has attractions like the Butterfly Conservatory and Niagara Parks Botanical Gardens.')">
                     <img src="https://images.odigoo.com/images/media/cenonte-ik-kil/full-view.jpg" alt="Niagara Falls">
                     <div>
                         <strong>Cenote Ik Kil</strong> - Yucatan
-                        <p>Near Chichen Itza, this beautiful cenote (natural sinkhole) is famous for its stunning blue waters surrounded by lush vegetation. It’s a popular spot for swimming and experiencing the natural beauty of the Yucatan Peninsula.</p>
+                        <p>Near Chichen Itza, this beautiful cenote (natural sinkhole) is famous for its stunning blue
+                            waters surrounded by lush vegetation. It’s a popular spot for swimming and experiencing the
+                            natural beauty of the Yucatan Peninsula.</p>
                     </div>
                 </li>
-                <li class="list-item" onclick="showOverlay('https://offloadmedia.feverup.com/secretsanfrancisco.com/wp-content/uploads/2022/05/13025636/palace-of-fine-arts-sf-1024x683.jpg', 'Old Quebec City is a historic area recognized as a UNESCO World Heritage site. It features charming cobblestone streets and well-preserved buildings from the 17th and 18th centuries. Key attractions include the iconic Château Frontenac, which offers stunning views of the St. Lawrence River, and the historic Plains of Abraham, a pivotal site in Canadian history. Visitors can enjoy local cuisine at traditional restaurants and explore boutiques and art galleries. The Winter Carnival, held every February, features ice sculptures and lively parades.')">
-                    <img src="https://offloadmedia.feverup.com/secretsanfrancisco.com/wp-content/uploads/2022/05/13025636/palace-of-fine-arts-sf-1024x683.jpg" alt="Old Quebec City">
+                <li class="list-item"
+                    onclick="showOverlay('https://offloadmedia.feverup.com/secretsanfrancisco.com/wp-content/uploads/2022/05/13025636/palace-of-fine-arts-sf-1024x683.jpg', 'Old Quebec City is a historic area recognized as a UNESCO World Heritage site. It features charming cobblestone streets and well-preserved buildings from the 17th and 18th centuries. Key attractions include the iconic Château Frontenac, which offers stunning views of the St. Lawrence River, and the historic Plains of Abraham, a pivotal site in Canadian history. Visitors can enjoy local cuisine at traditional restaurants and explore boutiques and art galleries. The Winter Carnival, held every February, features ice sculptures and lively parades.')">
+                    <img src="https://offloadmedia.feverup.com/secretsanfrancisco.com/wp-content/uploads/2022/05/13025636/palace-of-fine-arts-sf-1024x683.jpg"
+                        alt="Old Quebec City">
                     <div>
                         <strong>Palace of Fine Arts</strong> - Mexico City, Mexico
-                        <p>Situated in Mexico City, this stunning cultural center features a mix of architectural styles, including Art Nouveau and Art Deco. The interior houses beautiful murals and offers performances in music, dance, and theater.</p>
+                        <p>Situated in Mexico City, this stunning cultural center features a mix of architectural
+                            styles, including Art Nouveau and Art Deco. The interior houses beautiful murals and offers
+                            performances in music, dance, and theater.</p>
                     </div>
                 </li>
-                <li class="list-item" onclick="showOverlay('https://mexicocenotesandruins.com/wp-content/uploads/2022/03/tulum_ruins_07.jpg.webp', 'Whistler Blackcomb is a renowned ski resort located in British Columbia, famous for its incredible skiing and snowboarding terrain. With over 8,000 acres of skiable terrain, it was a host site for the 2010 Winter Olympics. Visitors can enjoy winter sports, as well as summer activities such as mountain biking and hiking. The resort features a vibrant village with shops, restaurants, and nightlife. For breathtaking views, don\'t miss the Peak 2 Peak Gondola, the world\'s highest and longest lift, connecting Whistler and Blackcomb mountains.')">
-                    <img src="https://mexicocenotesandruins.com/wp-content/uploads/2022/03/tulum_ruins_07.jpg.webp" alt="Whistler Blackcomb">
+                <li class="list-item"
+                    onclick="showOverlay('https://mexicocenotesandruins.com/wp-content/uploads/2022/03/tulum_ruins_07.jpg.webp', 'Whistler Blackcomb is a renowned ski resort located in British Columbia, famous for its incredible skiing and snowboarding terrain. With over 8,000 acres of skiable terrain, it was a host site for the 2010 Winter Olympics. Visitors can enjoy winter sports, as well as summer activities such as mountain biking and hiking. The resort features a vibrant village with shops, restaurants, and nightlife. For breathtaking views, don\'t miss the Peak 2 Peak Gondola, the world\'s highest and longest lift, connecting Whistler and Blackcomb mountains.')">
+                    <img src="https://mexicocenotesandruins.com/wp-content/uploads/2022/03/tulum_ruins_07.jpg.webp"
+                        alt="Whistler Blackcomb">
                     <div>
                         <strong>Tulum Ruins</strong> - Quintana Ruins, Mexico
-                        <p>Located on the Caribbean coast, these ancient Mayan ruins overlook the sea. Tulum is notable for its well-preserved structures and breathtaking views, making it a popular destination for both history buffs and beach lovers.</p>
+                        <p>Located on the Caribbean coast, these ancient Mayan ruins overlook the sea. Tulum is notable
+                            for its well-preserved structures and breathtaking views, making it a popular destination
+                            for both history buffs and beach lovers.</p>
                     </div>
                 </li>
             </ul>
@@ -267,7 +313,7 @@
 
     <!-- Scroll to Top Button -->
     <button class="scroll-to-top" id="scrollToTopBtn" onclick="scrollToTop()">
-        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828910.png" alt="Scroll to Top">
+        <img src="https://imgs.search.brave.com/pPSCAS9Wfqrm5ua9UY3p4C3ETB1M-Iyfp77WeMjUxxk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMjE2/MTI5NTQwMi92ZWN0/b3IvdXAtYnV0dG9u/LWljb24tb24td2hp/dGUtYmFja2dyb3Vu/ZC5qcGc_cz02MTJ4/NjEyJnc9MCZrPTIw/JmM9TG1sQmFjejg0/emtoODZubno2cHJC/bDM3Zml6ZjA3Z3o2/dmE4UE1pM1JRbz0" alt="Scroll to Top">
     </button>
 
     <script>
@@ -284,7 +330,7 @@
         }
 
         // Scroll to Top Functionality
-        window.onscroll = function() {
+        window.onscroll = function () {
             let scrollToTopBtn = document.getElementById("scrollToTopBtn");
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
                 scrollToTopBtn.classList.add('show');
@@ -299,4 +345,5 @@
         }
     </script>
 </body>
+
 </html>
