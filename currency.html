@@ -82,20 +82,7 @@
             cursor: not-allowed; /* Not editable */
         }
 
-        button {
-            padding: 8px 16px; /* Smaller button size */
-            background-color: #007bff; /* Button background */
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        button:hover {
-            background-color: #0056b3; /* Darker blue on hover */
-        }
+        
 
         @media (max-width: 480px) {
             .currency-row {
@@ -119,10 +106,10 @@
     <!-- Navigation Buttons -->
     <div class="nav-container">
         <a href="page1.html" class="button">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s" alt="Previous Page" /> Previous
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxGkYAnjAMXJLhnDopmXg6RWBe6Iyk-k9Ceg&s" alt="Previous Page" /> 
         </a>
         <a href="index.html" class="button">
-            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg" alt="Home" /> Home
+            <img src="https://static.vecteezy.com/system/resources/thumbnails/022/013/913/small/home-icon-illustration-image-vector.jpg" alt="Home" /> 
         </a>
     </div>
 
@@ -132,7 +119,7 @@
             <input type="number" id="amount" placeholder="Amount" />
             <select class="currency-input" id="fromCurrency"></select>
         </div>
-        <button id="swapButton">Swap</button>
+
         <div class="currency-row">
             <select class="currency-input" id="toCurrency"></select>
             <input type="text" id="outputAmount" placeholder="Converted Amount" readonly />
@@ -196,7 +183,7 @@
         document.getElementById("amount").addEventListener("input", updateExchange);
         document.getElementById("fromCurrency").addEventListener("change", updateExchange);
         document.getElementById("toCurrency").addEventListener("change", updateExchange);
-        document.getElementById("swapButton").addEventListener("click", swapCurrencies);
+        
 
         window.onload = populateCurrencyDropdowns;
     </script>
